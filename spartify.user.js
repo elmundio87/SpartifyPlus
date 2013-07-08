@@ -31,6 +31,11 @@ function updateSong(oldSong,newSong){
 
 }
 
+function isMaster(){
+	var room = location.href.substr(location.href.lastIndexOf('/') + 1);
+	return localStorage[room + ":master"] == "true";
+}
+
 function stringToBoolean(arg1){
 	return arg1 == "true";
 }
@@ -92,5 +97,6 @@ function LocalMain (){
 
 }
 
+if(!isMaster()){
 LocalMain();
-
+}
